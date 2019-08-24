@@ -1,3 +1,7 @@
 h1 {
 	color: #F00;
 }
+.secondary-headline {
+	display: block;
+	margin-left: 2rem;
+}
