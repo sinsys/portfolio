@@ -23,7 +23,7 @@ I&#39;ve worked with a lot of tech companies. Its not about what or who you know
     - **Live App:** https://sinsys.github.io/quiz-app-remastered/
     - **Repository:** https://github.com/sinsys/quiz-app-remastered
     - **Screenshots** 
-        - [![Quiz - Front End Fundamentals (mid quiz)](https://thumblink)](https://fullink")
-        - [![Quiz - Front End Fundamentals (finished)](https://thumblink)](https://fullink")
+        - [![Quiz - Front End Fundamentals (mid quiz)](https://github.com/sinsys/portfolio/blob/master/img/projects/quiz-app/quiz-app-mid-quiz-thumb.jpg?raw=true)](https://github.com/sinsys/portfolio/blob/master/img/projects/quiz-app/quiz-app-mid-quiz-full.jpg?raw=true")
+        - [![Quiz - Front End Fundamentals (finished)](https://github.com/sinsys/portfolio/blob/master/img/projects/quiz-app/quiz-app-quiz-end-thumb.jpg?raw=true)](https://github.com/sinsys/portfolio/blob/master/img/projects/quiz-app/quiz-app-quiz-end-full.jpg?raw=true")
 
 ## Assets
