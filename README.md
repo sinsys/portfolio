@@ -28,6 +28,6 @@ I&#39;ve worked with a lot of tech companies. Its not about what or who you know
 
 ## Assets
 - Profile picture 
-    - [!Profile picture](https://github.com/sinsys/portfolio/blob/master/img/profile-pic-128.png?raw=true)](https://github.com/sinsys/portfolio/blob/master/img/profile-pic-256.png?raw=true")
+    - [![Profile picture](https://github.com/sinsys/portfolio/blob/master/img/profile-pic-128.png?raw=true)](https://github.com/sinsys/portfolio/blob/master/img/profile-pic-256.png?raw=true")
 - GitHub Icon
-    - [!GitHub Icon](https://github.com/sinsys/portfolio/blob/master/img/github-dark-64.png?raw=true)](https://github.com/sinsys/portfolio/blob/master/img/github-dark-64.png?raw=true")
+    - [![GitHub Icon](https://github.com/sinsys/portfolio/blob/master/img/github-dark-64.png?raw=true)](https://github.com/sinsys/portfolio/blob/master/img/github-dark-64.png?raw=true")
