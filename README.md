@@ -4,10 +4,10 @@ Web developer too stubborn to accept bad practices
 `newTech && refactoring > oldHacks && spaghetti`
 
 ## Statement
-> Amazon, Microsoft, these companies are keen,
-> Yet I&#39;ve been with them and earned skills worth degrees,
-> Promises, returns, I find code to be serene,
-> Let&#39;s gather resources and write programs for machines!
+> Amazon, Microsoft, these companies are keen,  
+> Yet I&#39;ve been with them and earned skills worth degrees,  
+> Promises, returns, I find code to be serene,  
+> Let&#39;s gather resources and write programs for machines!  
 
 I have a yearning passion for learning new things and practicing what I already know. After working with AI, Machine Learning, Kaizen (progress improvement), as well as front and back end development, I&#39;m more eager than ever to see just what else these flourishing fields can accomplish.
 
