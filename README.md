@@ -9,7 +9,7 @@ Web developer too stubborn to accept bad practices
 > Promises, returns, I find code to be serene,  
 > Let&#39;s gather resources and write programs for machines!  
 
-I have a yearning passion for learning new things and practicing what I already know. After working with AI, Machine Learning, Kaizen (progress improvement), as well as front and back end development, I&#39;m more eager than ever to see just what else these flourishing fields can accomplish.
+I have a yearning passion for learning new things and practicing what I already know. After working with AI, Machine Learning, Kaizen (process improvement), as well as front and back end development, I&#39;m more eager than ever to push the limits on just what else these flourishing fields can accomplish.
 
 ## Bio:
 I&#39;ve worked with a lot of tech companies. Its not about what or who you know, its about what you can do. And I plan to do a lot...
