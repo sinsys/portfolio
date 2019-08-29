@@ -33,6 +33,10 @@ main {
 	flex-direction: column;
 	align-items: center;
 }
+.project-thumbnails {
+	display: flex;
+	flex-wrap: nowrap;
+}
 .project-wrapper-inverse p,
 .project-title-inverse {
 	text-align: right;
