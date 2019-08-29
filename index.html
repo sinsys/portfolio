@@ -5,56 +5,78 @@
 		<meta name="viewport" content="width=device-width initial-scale=1">
 		<meta name="description" content="Portfolio page of Nicholas Hazel with code examples, live demos, and ...">
 		<title>Nicholas Hazel - Full Stack Web Developer</title>
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans|Philosopher&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/layout.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<script src="https://kit.fontawesome.com/b379dbb0db.js"></script>
 	</head>
 	<body>
+
 		<header>
-			<div id="ham-menu"></div>
+			<button class="ql-portfolio">Portfolio Quick Link</button>
+			<div class="ham-menu">
+				<a href="#menu">&#9776;</a>
+			</div>
 		</header>
 
 		<main>
-			<div class="move-showcase-left"></div>
-
-			<section class="social-wrapper"></section>
-
-			<article id="showcase">
-
-				<p class="headline">Web developer too stubborn to accept bad practices.
-					<span class="secondary-headline"><code>newTech && refactoring > oldHacks && spaghetti</code></span>
-				</p>
-
-				<p class="description">Amazon, Microsoft, these companies are key,<br>&ensp;Yet I've been with them and seen my skills are worth degrees,<br>Promises, returns, even the code can speak in leagues,<br>&ensp;Let's go gather resources and come up with other means...
-				</p>
-
-				<section class="projects">
-
-					<section class="project">
-						<h2 class="project-title">This is a thing</h2>
-						<p class="project-desc">I love to do the move it move it, move it move it,......</p>
-
-						<section class="project-tech">
-							<ul class="project-tech-wrapper">
-								<li class="project-tech-technology">JS</li>
-							</ul>
-						</section>
-
-						<section class="project-demos">
-							<p class="project-live">live link</p>
-							<p class="project-repo">repo link</p>
-						</section>
-
-					</section>
+			<article class="hero-wrapper">
+				<section class="hero">
+					<h2 class="hero-text-primary">
+						Hero headline
+					</h1>
+					<h2 class="hero-text-secondary">
+						Hero subheadline
+					</h2>
 				</section>
-
 			</article>
 
-			<div class="move-showcase-right"></div>
+			<article class="statement-wrapper">
+				<section class="statement">
+					<img class="profile-img" src="https://via.placeholder.com/64" alt="profile image">
+					<blockquote class="statement">
+						This is where our mission statement for the portfolio will live
+					</blockquote>
+				</section>
+			</article>
+
+			<div class="divider">&nbsp;</div>
+
+			<article class="projects-wrapper">
+				<section class="project">
+					<h2>Project Title</h2>
+					<div class="project-wrapper">
+						<p class="project-desc">
+							Description of the project
+						</p>
+						<img class="project-thumbnail" src="https://via.placeholder.com/64x128" alt="project thumbnail">
+						<img class="project-thumbnail" src="https://via.placeholder.com/64x128" alt="project thumbnail">
+						<img class="project-thumbnail" src="https://via.placeholder.com/256x128" alt="project thumbnail">
+					</div>
+				</section>
+				<section class="project">
+					<h2 class="project-title-inverse">Project Title</h2>
+					<div class="project-wrapper-inverse">
+						<p class="project-desc">
+							Description of the project
+						</p>
+						<img class="project-thumbnail" src="https://via.placeholder.com/256x128" alt="project thumbnail">
+						<img class="project-thumbnail" src="https://via.placeholder.com/64x128" alt="project thumbnail">
+						<img class="project-thumbnail" src="https://via.placeholder.com/64x128" alt="project thumbnail">
+					</div>
+				</section>
+			</article>
+
+			<div class="divider">&nbsp;</div>
+
 		</main>
 
 		<footer>
-			<section class="owner-details"></section>
+			<section class="author-credits">
+				<p class="author">Author name</p>
+				<p class="cr-year">Copyright and Year</p>
+			</section>
 		</footer>
 
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
