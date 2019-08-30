@@ -1,0 +1,117 @@
+/********** COLOR SCHEME **********/
+/* Scheme */
+/* Shades */
+/********** TYPOGRAPHY **********/
+html {
+  font-size: 16px;
+  color: #EFEFEF; }
+
+body {
+  background: #131313;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+a, a:visited, a:active, a:hover, p, blockquote, span, li {
+  font-family: "Muli", sans-serif; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Shrikhand", cursive; }
+
+p, blockquote {
+  line-height: 20px; }
+
+h2 {
+  font-size: 2rem;
+  padding: 1rem; }
+
+p {
+  padding: 0.5rem; }
+
+.ql-portfolio {
+  font-size: 1.5rem;
+  color: #EFEFEF; }
+
+.ham-menu {
+  margin: 1rem; }
+
+.ham-menu a {
+  font-size: 4rem;
+  color: #999999;
+  text-decoration: none; }
+
+.hero-text-primary {
+  color: #B3D7FF; }
+
+.hero-text-secondary {
+  text-align: right;
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 1.5rem;
+  color: #477BB3;
+  background: #CCCCCC;
+  margin-top: -4rem; }
+
+/********** HEADER **********/
+.ql-portfolio {
+  background: #FF8508;
+  border: none;
+  margin: 1rem;
+  padding: 1.5rem 3rem;
+  border-radius: 16px 16px 0 0;
+  position: relative;
+  text-align: center; }
+
+.ql-portfolio:after {
+  position: relative;
+  bottom: -72px;
+  left: auto;
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 20px solid #FF8508; }
+
+.profile-img {
+  border-radius: 32px; }
+
+.divider {
+  width: 100%;
+  height: 3rem;
+  background: #CCCCCC; }
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  width: 100%;
+  text-align: center; }
+
+.hero-text-primary {
+  width: 100%;
+  padding: 3rem;
+  background: #666666; }
+
+.hero-text-secondary {
+  margin-top: -16px;
+  background: #CCCCCC;
+  border-radius: 16px 0 0 16px; }
+
+.project-wrapper, .project-wrapper-inverse {
+  background: #EEE;
+  padding: 1rem; }
+
+.statement {
+  padding: 1rem 3rem;
+  font-size: 1.25rem;
+  line-height: 1.5rem; }
+
+.project h2 {
+  color: #FF8508;
+  width: 100%; }
+
+.project-wrapper, .project-wrapper-inverse {
+  background: #666666;
+  width: 100%; }
