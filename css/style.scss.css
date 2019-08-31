@@ -18,7 +18,8 @@ a, a:visited, a:active, a:hover, p, blockquote, span, li {
   font-family: "Muli", sans-serif; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Shrikhand", cursive; }
+  font-family: "Shrikhand", cursive;
+  letter-spacing: 0.1rem; }
 
 p, blockquote {
   line-height: 20px; }
@@ -31,7 +32,7 @@ p {
   padding: 0.5rem; }
 
 .ql-portfolio {
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: #EFEFEF; }
 
 .ham-menu {
@@ -58,14 +59,14 @@ p {
   background: #FF8508;
   border: none;
   margin: 1rem;
-  padding: 1.5rem 3rem;
+  padding: 1.5rem;
   border-radius: 16px 16px 0 0;
   position: relative;
   text-align: center; }
 
 .ql-portfolio:after {
   position: relative;
-  bottom: -72px;
+  bottom: -60px;
   left: auto;
   content: "";
   width: 0;
@@ -92,19 +93,26 @@ p {
 .hero-text-primary {
   width: 100%;
   padding: 3rem;
-  background: #666666; }
+  background: #333333;
+  border-radius: 1rem 1rem 0 1rem; }
 
 .hero-text-secondary {
+  text-align: center;
+  max-width: 80%;
   margin-top: -16px;
-  background: #CCCCCC;
-  border-radius: 16px 0 0 16px; }
+  background: #131313;
+  color: #8DFF7C;
+  border-radius: 1rem 0 1rem 1rem;
+  border: 1px solid #666666; }
 
 .project-wrapper, .project-wrapper-inverse {
   background: #EEE;
   padding: 1rem; }
 
 .statement {
-  padding: 1rem 3rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
   font-size: 1.25rem;
   line-height: 1.5rem; }
 
@@ -113,5 +121,33 @@ p {
   width: 100%; }
 
 .project-wrapper, .project-wrapper-inverse {
-  background: #666666;
+  background: #333333;
   width: 100%; }
+
+.project-thumbnail {
+  max-width: 100%; }
+
+.divider {
+  text-align: center; }
+
+.vertical-thumb, .horizontal-thumb {
+  text-align: center; }
+
+.vertical-thumb {
+  flex-basis: 25%; }
+
+.horizontal-thumb {
+  flex-basis: 50%; }
+
+.project-thumbnails {
+  align-items: center; }
+
+.divider {
+  position: flex;
+  color: #131313;
+  justify-content: center;
+  align-items: center; }
+
+@media only screen and (min-width: 900px) {
+  .statement {
+    flex-direction: row; } }
