@@ -7,7 +7,6 @@ html {
   color: #EFEFEF; }
 
 body {
-  background: #131313;
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -30,6 +29,10 @@ h2 {
 
 p {
   padding: 0.5rem; }
+
+.hightlight {
+  color: #FFC3FF;
+  font-weight: bolder; }
 
 .ql-portfolio {
   font-size: 1rem;
@@ -54,6 +57,14 @@ p {
   background: #CCCCCC;
   margin-top: -4rem; }
 
+/********** BASE STYLES **********/
+html, body {
+  background: url(../img/background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
 /********** HEADER **********/
 .ql-portfolio {
   background: #FF8508;
@@ -65,9 +76,9 @@ p {
   text-align: center; }
 
 .ql-portfolio:after {
-  position: relative;
-  bottom: -60px;
-  left: auto;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
   content: "";
   width: 0;
   height: 0;
@@ -103,7 +114,7 @@ p {
   background: #131313;
   color: #8DFF7C;
   border-radius: 1rem 0 1rem 1rem;
-  border: 1px solid #666666; }
+  border: 1px solid #333333; }
 
 .project-wrapper, .project-wrapper-inverse {
   background: #EEE;
@@ -115,6 +126,9 @@ p {
   padding: 1rem;
   font-size: 1.25rem;
   line-height: 1.5rem; }
+
+.statement-text {
+  line-height: 1.3; }
 
 .project h2 {
   color: #FF8508;
@@ -150,4 +164,5 @@ p {
 
 @media only screen and (min-width: 900px) {
   .statement {
-    flex-direction: row; } }
+    flex-direction: row;
+    font-size: 2rem; } }
