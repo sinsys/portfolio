@@ -1,0 +1,6 @@
+# DO NOT TRACK THESE DIRECTORIES
+node/modules/
+wireframes/
+
+# DO NOT TRACK THESE EXTENSIONS
+*.scss
