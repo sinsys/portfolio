@@ -135,7 +135,7 @@ function $createProjectDOM(projects){
 		} else {
 			let $imgThumbs = getImgThumbs(curProj,"inverse");
 			let $curProj = `
-				<section class="project">
+				<section class="project inverse">
 					<div class="project-wrapper-inverse">
 					<h2 class="project-title-inverse">${curProj.title}</h2>
 						<p class="project-desc">${curProj.description}</p>
@@ -198,4 +198,16 @@ function quickPortfolio(section){
 
 $(function(){
 	renderInitDOM(STORE);
+	$('.ham-menu').on('click', function(){
+		$('.mobile-navigation').css('right', 0);
+		$('.page-wrapper').css('right', '90vw');
+	})
+	$('.mobile-navigation').on('click', function(){
+		$('.mobile-navigation').css('right', '-90vw');
+		$('.page-wrapper').css('right', 0);
+	})
 });
+
+$('a').on('click', function(e){
+	e.preventDefault();
+})
