@@ -80,7 +80,7 @@ html, body {
   cursor: pointer; }
 
 .ql-portfolio:hover {
-  background: #333333; }
+  background: #FF8508; }
 
 .ql-portfolio:after {
   position: absolute;
@@ -89,15 +89,13 @@ html, body {
   content: "";
   width: 0;
   height: 0;
-  border-left: 0px solid transparent;
-  border-right: 0px solid transparent;
-  border-top: 0px solid #FF8508;
-  transition: border-width 0.3s ease, bottom 0.3s ease; }
-
-.ql-portfolio:hover:after {
-  bottom: -20px;
   border-left: 50px solid transparent;
   border-right: 50px solid transparent;
+  border-top: 0px solid transparent;
+  transition: border-width 0.3s ease, bottom 0.3s ease, border-color 0.3s ease; }
+
+.ql-portfolio:hover:after {
+  bottom: -22px;
   border-top: 20px solid #FF8508; }
 
 /********** MAIN CONTENT **********/
@@ -121,7 +119,7 @@ html, body {
   text-align: center;
   max-width: 80%;
   margin-top: -16px;
-  background: #131313;
+  background: repeating-linear-gradient(0deg, #333333, #333333 0.0625rem, #131313 0.0625rem, #131313 0.125rem);
   color: #8DFF7C;
   border-radius: 1rem 0 1rem 1rem;
   border: 1px solid #333333; }
@@ -131,49 +129,49 @@ html, body {
   width: 100%;
   padding: 1rem;
   margin: 1rem 0;
-  transition: background 0.3s; }
+  transition: background 0.3s;
+  border: 1px solid transparent; }
 
 .project-wrapper:hover, .project-wrapper-inverse:hover {
-  background: #666666;
-  cursor: pointer; }
+  background: #131313;
+  cursor: pointer;
+  border: 1px solid #FF8508; }
 
 .project-wrapper:before {
   position: absolute;
   right: 10%;
-  margin-right: -2rem;
+  margin-right: 0rem;
   margin-top: -1rem;
   content: "";
   width: 0;
   height: 0;
   border-top: 4rem solid transparent;
   border-bottom: 4rem solid transparent;
-  border-left: 2rem solid #477BB3;
+  border-left: 0rem solid #FF8508;
   z-index: 1000;
   transition: all 0.3s; }
 
 .project-wrapper-inverse:before {
   position: absolute;
   left: 10%;
-  margin-left: -2rem;
+  margin-left: 0rem;
   margin-top: -1rem;
   content: "";
   width: 0;
   height: 0;
   border-top: 4rem solid transparent;
   border-bottom: 4rem solid transparent;
-  border-right: 2rem solid #477BB3;
+  border-right: 0rem solid #FF8508;
   z-index: 1000;
   transition: all 0.3s; }
 
 .project-wrapper:hover:before {
-  border-top: 6rem solid transparent;
-  border-bottom: 6rem solid transparent;
-  border-left: 2rem solid #B3D7FF; }
+  margin-right: -2rem;
+  border-left: 2rem solid #FF8508; }
 
 .project-wrapper-inverse:hover:before {
-  border-top: 6rem solid transparent;
-  border-bottom: 6rem solid transparent;
-  border-right: 2rem solid #B3D7FF; }
+  margin-left: -2rem;
+  border-right: 2rem solid #FF8508; }
 
 .statement {
   display: flex;
