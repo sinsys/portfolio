@@ -67,21 +67,35 @@ html, body {
 
 /********** HEADER **********/
 .ql-portfolio {
-  background: #FF8508;
-  border: none;
+  background: #131313;
+  border: 2px solid #FF8508;
   margin: 1rem;
   padding: 1.5rem;
-  border-radius: 16px 16px 0 0;
+  border-radius: 16px 16px 16px 0;
   position: relative;
-  text-align: center; }
+  text-align: center;
+  font-family: "Muli", sans-serif;
+  font-size: 1.5rem;
+  transition: background 0.3s ease;
+  cursor: pointer; }
+
+.ql-portfolio:hover {
+  background: #333333; }
 
 .ql-portfolio:after {
   position: absolute;
-  bottom: -20px;
+  bottom: 0px;
   left: 0;
   content: "";
   width: 0;
   height: 0;
+  border-left: 0px solid transparent;
+  border-right: 0px solid transparent;
+  border-top: 0px solid #FF8508;
+  transition: border-width 0.3s ease, bottom 0.3s ease; }
+
+.ql-portfolio:hover:after {
+  bottom: -20px;
   border-left: 50px solid transparent;
   border-right: 50px solid transparent;
   border-top: 20px solid #FF8508; }
@@ -171,15 +185,25 @@ html, body {
 .statement-text {
   line-height: 1.3; }
 
-.project h2 {
+.project h3 {
   color: #FF8508;
-  width: 100%; }
+  font-size: 1.5rem; }
 
 .project-thumbnail {
   max-width: 100%; }
 
 .divider {
-  text-align: center; }
+  position: flex;
+  color: #477BB3;
+  background: #333333;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  height: 5rem; }
+
+.divider h2 {
+  line-height: 3rem;
+  margin-left: 10%; }
 
 .vertical-thumb, .horizontal-thumb {
   text-align: center; }
@@ -191,12 +215,6 @@ html, body {
   flex-basis: 50%; }
 
 .project-thumbnails {
-  align-items: center; }
-
-.divider {
-  position: flex;
-  color: #131313;
-  justify-content: center;
   align-items: center; }
 
 @media only screen and (min-width: 900px) {
@@ -213,53 +231,14 @@ main {
   overflow-x: hidden;
   perspective: 1500px; }
 
-.projects-wrapper {
-  transition: transform 2s ease;
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  position: relative; }
-
-.projects-wrapper.rotate-left {
-  transform-origin: 100% 50%;
-  transform: rotateY(-90deg); }
-
-.projects-wrapper.rotate-right {
-  transform-origin: 0% 50%;
-  transform: rotateY(90deg); }
-
-.project-details-page-left {
-  left: -90vw;
-  transform-origin: 100% 50%;
-  transform: rotateY(90deg);
-  transition-property: transform, left;
-  transition-duration: 2s;
-  transition-timing-function: ease; }
-
-.project-details-page-left.active {
-  transform: rotateY(0deg);
-  left: 10vh; }
-
-.project-details-page-right {
-  right: -90vw;
-  transform-origin: 0% 50%;
-  transform: rotateY(-90deg);
-  transition-property: transform, right;
-  transition-duration: 2s;
-  transition-timing-function: ease; }
-
-.project-details-page-right.active {
-  transform: rotateY(0deg);
-  right: 10vh; }
-
 nav.mobile-navigation {
   top: 0;
-  right: -90vw;
+  right: -320px;
   position: fixed;
-  width: 90vw;
+  width: 320px;
   height: 100vh;
   background: #333333;
-  z-index: 1001;
+  z-index: 100;
   transition: right 1s ease; }
 
 .page-wrapper {
@@ -290,3 +269,33 @@ html, body {
 
 .navigation-link {
   flex-basis: 15%; }
+
+.jquery-icon {
+  display: block;
+  text-indent: -9999px;
+  width: 64px;
+  height: 64px;
+  background: url(../img/technologies/jquery.png);
+  background-size: 64px 64px; }
+
+.technologies {
+  margin: 2rem auto;
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 64px; }
+
+.technologies * {
+  width: 64px;
+  height: 64px; }
+
+.fa-html5 {
+  color: #ea6228; }
+
+.fa-css3-alt {
+  color: #337ac1; }
+
+.fa-js-square {
+  color: #ffca28; }

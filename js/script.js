@@ -26,7 +26,7 @@ const STORE = {
 						"End of quiz image"],
 				]
 			},
-			technologies: ["HTML5, CSS3, JS (ES6), jQuery"],
+			technologies: ["HTML5", "CSS3", "JS (ES6)", "jQuery"],
 			gitHub: "https://github.com/sinsys/quiz-app-remastered/",
 			liveLink: "https://sinsys.github.io/quiz-app-remastered/"
 		},{
@@ -54,7 +54,7 @@ const STORE = {
 						"End of quiz image"],
 				]
 			},
-			technologies: ["HTML5, CSS3, JS (ES6), jQuery"],
+			technologies: ["HTML5", "CSS3", "JS (ES6)", "jQuery"],
 			gitHub: "https://github.com/sinsys/quiz-app-remastered/",
 			liveLink: "https://sinsys.github.io/quiz-app-remastered/"
 		},{
@@ -82,7 +82,7 @@ const STORE = {
 						"End of quiz image"],
 				]
 			},
-			technologies: ["HTML5, CSS3, JS (ES6), jQuery"],
+			technologies: ["HTML5", "CSS3", "JS (ES6)", "jQuery"],
 			gitHub: "https://github.com/sinsys/quiz-app-remastered/",
 			liveLink: "https://sinsys.github.io/quiz-app-remastered/"
 		}
@@ -118,15 +118,19 @@ function $createProjectDOM(projects){
 
 	for(let i=0; i<projects.length; i++){
 		let curProj = projects[i];
+		let $techIcons = getTechnologies(curProj.technologies);
 		if(i%2 === 0){
 			let $imgThumbs = getImgThumbs(curProj,"normal");
 			let $curProj = `
 				<section class="project">
 					<div class="project-wrapper">
-					<h2 class="project-title">${curProj.title}</h2>
+					<h3 class="project-title">${curProj.title}</h3>
 						<p class="project-desc">${curProj.description}</p>
 						<div class="project-thumbnails">
 							${$imgThumbs}
+						</div>
+						<div class="technologies">
+							${$techIcons}
 						</div>
 					</div>
 				</section>
@@ -137,10 +141,13 @@ function $createProjectDOM(projects){
 			let $curProj = `
 				<section class="project inverse">
 					<div class="project-wrapper-inverse">
-					<h2 class="project-title-inverse">${curProj.title}</h2>
+					<h3 class="project-title-inverse">${curProj.title}</h3>
 						<p class="project-desc">${curProj.description}</p>
 						<div class="project-thumbnails">
 							${$imgThumbs}
+						</div>
+						<div class="technologies">
+							${$techIcons}
 						</div>
 					</div>
 				</section>
@@ -186,6 +193,26 @@ function getImgThumbs(project, direction){
 	}
 	return $imgThumbs;
 }
+
+function getTechnologies(projectTechs){
+	let $technologyIcons = ``;
+	for(let i=0; i<projectTechs.length; i++){
+		console.log(projectTechs[i]);
+		switch(projectTechs[i]){
+			case "HTML5": $technologyIcons+='<i class="fab fa-html5"></i>';
+				break;
+			case "CSS3": $technologyIcons+='<i class="fab fa-css3-alt"></i>';
+				break;
+			case "JS (ES6)": $technologyIcons+='<i class="fab fa-js-square"></i>';
+				break;
+			case "jQuery": $technologyIcons+='<i class="jquery-icon"></i>';
+				break;
+			default:
+				break;
+		}
+	}
+	return $technologyIcons;
+}
 // Slide out project and move to main page
 function closeProject(project, direction){
 
@@ -195,19 +222,27 @@ function closeProject(project, direction){
 function quickPortfolio(section){
 
 }
+// Open up the mobile navigation menu
+function toggleNavMenu(state){
+	if(state){
+		$('.mobile-navigation').css('right', 0);
+		$('.page-wrapper').css('right', '320px');		
+	} else {
+		$('.mobile-navigation').css('right', '-320px');
+		$('.page-wrapper').css('right', 0);
+	}
+}
 
 $(function(){
 	renderInitDOM(STORE);
 	$('.ham-menu').on('click', function(){
-		$('.mobile-navigation').css('right', 0);
-		$('.page-wrapper').css('right', '90vw');
+		toggleNavMenu(true);
 	})
-	$('.mobile-navigation').on('click', function(){
-		$('.mobile-navigation').css('right', '-90vw');
-		$('.page-wrapper').css('right', 0);
+	$('.close-nav').on('click', function(){
+		toggleNavMenu(false);
+	})
+	$('a').on('click', function(e){
+		e.preventDefault();
 	})
 });
 
-$('a').on('click', function(e){
-	e.preventDefault();
-})
