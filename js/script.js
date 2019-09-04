@@ -2,7 +2,6 @@ const STORE = {
 	// Make a key for projects as an array of our projects
 	projects: [
 		{
-			// This is all self explanatory
 			title: "Quiz - Front End Fundamentals",
 			description: "This is a quiz designed to test basic front end principles",
 			// This is used for extended descriptions of each project
@@ -30,7 +29,6 @@ const STORE = {
 			gitHub: "https://github.com/sinsys/quiz-app-remastered/",
 			liveLink: "https://sinsys.github.io/quiz-app-remastered/"
 		},{
-			// This is all self explanatory
 			title: "Quiz - Front End Fundamentals",
 			description: "This is a quiz designed to test basic front end principles",
 			// This is used for extended descriptions of each project
@@ -87,11 +85,12 @@ const STORE = {
 			liveLink: "https://sinsys.github.io/quiz-app-remastered/"
 		}
 	],
+	// Key info about the profile that I can edit in one place if needed
 	profile: {
 		title: "Web developer too stubborn to accept bad practices",
 		subtitle: "newTech && refactoring > oldHacks && spaghetti",
 		profileImg: ["./img/profile-pic-128.png", "./img/profile-pic-256.png"],
-		statement: `I have a yearning passion for learning new things and practicing what I already know. After working with <span class="hightlight">AI</span>, <span class="hightlight">Machine Learning</span>, <span class="hightlight">Kaizen (process improvement)</span>, as well as <span class="hightlight">Front/Back End Development</span>, I'm more eager than ever to push the limits on just what else these flourishing fields can accomplish.`,
+		statement: `I have a yearning passion for learning new things and practicing what I already know. After working with <span class="highlight">AI</span>, <span class="highlight">Machine Learning</span>, <span class="highlight">Kaizen (process improvement)</span>, as well as <span class="highlight">Front/Back End Development</span>, I'm more eager than ever to push the limits on just what else these flourishing fields can accomplish.`,
 		name: "Nicholas Hazel",
 		year: 2019
 	}
@@ -110,20 +109,26 @@ function renderInitDOM(data){
 }
 
 function expandProject(project, direction){
-
+	// Awaiting off-canvas project details HTML/CSS
+}
+// Slide out project and move to main page
+function closeProject(project, direction){
+	// Awaiting off-canvas project details HTML/CSS
 }
 
+// Returns a collection of all projects into a $DOM element
 function $createProjectDOM(projects){
 	let $allProj = ``;
 
 	for(let i=0; i<projects.length; i++){
 		let curProj = projects[i];
 		let $techIcons = getTechnologies(curProj.technologies);
+		// This modulus statement allows different HTML structures to alternate project layout
 		if(i%2 === 0){
 			let $imgThumbs = getImgThumbs(curProj,"normal");
 			let $curProj = `
 				<section class="project">
-					<div class="project-wrapper">
+					<div class="project-wrapper" tabindex="0">
 					<h3 class="project-title">${curProj.title}</h3>
 						<p class="project-desc">${curProj.description}</p>
 						<div class="project-thumbnails">
@@ -140,7 +145,7 @@ function $createProjectDOM(projects){
 			let $imgThumbs = getImgThumbs(curProj,"inverse");
 			let $curProj = `
 				<section class="project inverse">
-					<div class="project-wrapper-inverse">
+					<div class="project-wrapper-inverse" tabindex="0">
 					<h3 class="project-title-inverse">${curProj.title}</h3>
 						<p class="project-desc">${curProj.description}</p>
 						<div class="project-thumbnails">
@@ -158,8 +163,13 @@ function $createProjectDOM(projects){
 	return $allProj;
 }
 
+// Returns a collection of all images of a project into a $DOM element
 function getImgThumbs(project, direction){
 	let $imgThumbs = ``;
+	/* The logic here is that we want two different image layouts
+	depending on if the project is a normal or inverted layout.
+	Normal - Portrait thumbnails -> Landscape thumbnails
+	Inverted - Landscape thumbnails -> Landscape thumbnails*/
 	if(direction === "normal"){
 		for(let i=0; i<project.images.portrait.length; i++){
 			$imgThumbs+=`
@@ -194,10 +204,11 @@ function getImgThumbs(project, direction){
 	return $imgThumbs;
 }
 
+// Returns a collection of all project technologies into a $DOM element
 function getTechnologies(projectTechs){
 	let $technologyIcons = ``;
 	for(let i=0; i<projectTechs.length; i++){
-		console.log(projectTechs[i]);
+		// Used a switch statement for easy maintenance of future technologies that may be included
 		switch(projectTechs[i]){
 			case "HTML5": $technologyIcons+='<i class="fab fa-html5"></i>';
 				break;
@@ -213,15 +224,8 @@ function getTechnologies(projectTechs){
 	}
 	return $technologyIcons;
 }
-// Slide out project and move to main page
-function closeProject(project, direction){
 
-}
 
-// Quick move to projects
-function quickPortfolio(section){
-
-}
 // Open up the mobile navigation menu
 function toggleNavMenu(state){
 	if(state){
@@ -233,7 +237,7 @@ function toggleNavMenu(state){
 	}
 }
 
-// Scroll the page function
+// Scroll the page to a target function
 function scrollToAnchor(target){
     $('html,body').animate({
     	scrollTop: target.offset().top
@@ -242,16 +246,24 @@ function scrollToAnchor(target){
 
 
 $(function(){
+	// Render the DOM
 	renderInitDOM(STORE);
+
+	// Event handlers
+	// Open mobile nav menu
 	$('.ham-menu').on('click', function(){
 		toggleNavMenu(true);
 	})
+	// Close mobile nav menu
 	$('.close-nav').on('click', function(){
 		toggleNavMenu(false);
 	})
+	// Prevent all anchor clicks
+	// This will need to be altered for specific external links
 	$('a').on('click', function(e){
 		e.preventDefault();
 	})
+	// Fast scroll to projects on header button
 	$('.ql-portfolio').on('click', function(){
 		scrollToAnchor($('.projects-target'));
 	})
