@@ -233,6 +233,14 @@ function toggleNavMenu(state){
 	}
 }
 
+// Scroll the page function
+function scrollToAnchor(target){
+    $('html,body').animate({
+    	scrollTop: target.offset().top
+    },'slow');
+}
+
+
 $(function(){
 	renderInitDOM(STORE);
 	$('.ham-menu').on('click', function(){
@@ -243,6 +251,9 @@ $(function(){
 	})
 	$('a').on('click', function(e){
 		e.preventDefault();
+	})
+	$('.ql-portfolio').on('click', function(){
+		scrollToAnchor($('.projects-target'));
 	})
 });
 
