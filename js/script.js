@@ -3,7 +3,7 @@ const STORE = {
 	projects: [
 		{
 			title: "Quiz - Front End Fundamentals",
-			description: "This is a quiz designed to test basic front end principles",
+			description: "This is a quiz designed to test basic front end principles. It is composed of 50 potential questions organized within 10 categories. The questions and answer order is randomized to ensure a unique test the majority of the time.",
 			// This is used for extended descriptions of each project
 			extDescription: "",
 
@@ -30,7 +30,7 @@ const STORE = {
 			liveLink: "https://sinsys.github.io/quiz-app-remastered/"
 		},{
 			title: "Quiz - Front End Fundamentals",
-			description: "This is a quiz designed to test basic front end principles",
+			description: "This is a quiz designed to test basic front end principles. It is composed of 50 potential questions organized within 10 categories. The questions and answer order is randomized to ensure a unique test the majority of the time.",
 			// This is used for extended descriptions of each project
 			extDescription: "",
 
@@ -58,7 +58,7 @@ const STORE = {
 		},{
 			// This is all self explanatory
 			title: "Quiz - Front End Fundamentals",
-			description: "This is a quiz designed to test basic front end principles",
+			description: "This is a quiz designed to test basic front end principles. It is composed of 50 potential questions organized within 10 categories. The questions and answer order is randomized to ensure a unique test the majority of the time.",
 			// This is used for extended descriptions of each project
 			extDescription: "",
 
@@ -114,8 +114,26 @@ function renderInitDOM(data){
 	// Render projects into the DOM
 	$('.projects-wrapper').append($createProjectDOM(data.projects));
 	$('.contact').append($socialLinksDOM(data.social));
-}
 
+	updateProjectDetails(data.projects[0]);
+}
+// Updates off-canvas project details
+function updateProjectDetails(project, direction){
+	$('.details-title').html(project.title);
+	$('.details-description').html(project.description);
+	$('.details-images').html(getImgThumbs(project, "normal"));
+	$('.details-technologies').html(getTechnologies(project.technologies));
+	$('.details-links').html(`
+		<a href="${project.gitHub}">
+			<i class="fab fa-github"></i>
+			<p class="details-label">GitHub Repo</p>
+		</a>
+		<a href="${project.liveLink}">
+			<i class="fas fa-leaf"></i>
+			<p class="details-label">Live Link</p>
+		</a>
+	`);
+}
 function expandProject(project, direction){
 	// Awaiting off-canvas project details HTML/CSS
 }
@@ -131,84 +149,59 @@ function $createProjectDOM(projects){
 	for(let i=0; i<projects.length; i++){
 		let curProj = projects[i];
 		let $techIcons = getTechnologies(curProj.technologies);
-		// This modulus statement allows different HTML structures to alternate project layout
-		if(i%2 === 0){
-			let $imgThumbs = getImgThumbs(curProj,"normal");
-			let $curProj = `
-				<section class="project">
-					<div class="project-wrapper" tabindex="0">
-					<h3 class="project-title">${curProj.title}</h3>
-						<p class="project-desc">${curProj.description}</p>
-						<div class="project-thumbnails">
-							${$imgThumbs}
-						</div>
-						<div class="technologies">
-							${$techIcons}
-						</div>
+		let $imgThumbs = getImgThumbs(curProj);
+		let $curProj = `
+			<section class="project">
+				<div class="project-wrapper" tabindex="0">
+				<h3 class="project-title">${curProj.title}</h3>
+					<p class="project-desc">${curProj.description}</p>
+					<h4 class="project-heading">Screenshots</h4>
+					<div class="project-thumbnails">
+						${$imgThumbs}
 					</div>
-				</section>
-			`;
-			$allProj+=$curProj;			
-		} else {
-			let $imgThumbs = getImgThumbs(curProj,"inverse");
-			let $curProj = `
-				<section class="project inverse">
-					<div class="project-wrapper-inverse" tabindex="0">
-					<h3 class="project-title-inverse">${curProj.title}</h3>
-						<p class="project-desc">${curProj.description}</p>
-						<div class="project-thumbnails">
-							${$imgThumbs}
-						</div>
-						<div class="technologies">
-							${$techIcons}
-						</div>
+					<h4 class="project-heading">Tech Used</h4>
+					<div class="technologies">
+						${$techIcons}
 					</div>
-				</section>
-			`;
-			$allProj+=$curProj;					
-		}
+					<h4 class="project-heading">Links</h4>
+					<div class="details-links">
+						<a href="${curProj.gitHub}">
+							<i class="fab fa-github"></i>
+							<p class="details-label">GitHub Repo</p>
+						</a>
+						<a href="${curProj.liveLink}">
+							<i class="fas fa-leaf"></i>
+							<p class="details-label">Live Link</p>
+						</a>
+					</div>
+				</div>
+			</section>
+		`;
+		$allProj+=$curProj;			
+
 	}
 	return $allProj;
 }
 
 // Returns a collection of all images of a project into a $DOM element
-function getImgThumbs(project, direction){
+function getImgThumbs(project){
 	let $imgThumbs = ``;
-	/* The logic here is that we want two different image layouts
-	depending on if the project is a normal or inverted layout.
-	Normal - Portrait thumbnails -> Landscape thumbnails
-	Inverted - Landscape thumbnails -> Landscape thumbnails*/
-	if(direction === "normal"){
-		for(let i=0; i<project.images.portrait.length; i++){
-			$imgThumbs+=`
-				<div class="vertical-thumb">
-					<img class="project-thumbnail" src="${project.images.portrait[i][0]}" alt="${project.images.portrait[i][2]}">
-				</div>
-			`;
-		}
-		for(let i=0; i<project.images.landscape.length; i++){
-			$imgThumbs+=`
-				<div class="horizontal-thumb">
-					<img class="project-thumbnail" src="${project.images.landscape[i][0]}" alt="${project.images.landscape[i][2]}">
-				</div>
-			`;
-		}
-	} else {
-		for(let i=0; i<project.images.landscape.length; i++){
-			$imgThumbs+=`
-				<div class="horizontal-thumb">
-					<img class="project-thumbnail" src="${project.images.landscape[i][0]}" alt="${project.images.landscape[i][2]}">
-				</div>
-			`;
-		}		
-		for(let i=0; i<project.images.portrait.length; i++){
-			$imgThumbs+=`
-				<div class="vertical-thumb">
-					<img class="project-thumbnail" src="${project.images.portrait[i][0]}" alt="${project.images.portrait[i][2]}">
-				</div>
-			`;
-		}
+
+	for(let i=0; i<project.images.portrait.length; i++){
+		$imgThumbs+=`
+			<div class="vertical-thumb">
+				<img class="project-thumbnail" src="${project.images.portrait[i][0]}" alt="${project.images.portrait[i][2]}">
+			</div>
+		`;
 	}
+	for(let i=0; i<project.images.landscape.length; i++){
+		$imgThumbs+=`
+			<div class="horizontal-thumb">
+				<img class="project-thumbnail" src="${project.images.landscape[i][0]}" alt="${project.images.landscape[i][2]}">
+			</div>
+		`;
+	}
+
 	return $imgThumbs;
 }
 
@@ -280,6 +273,7 @@ function $socialLinksDOM(social){
 		</div>`;
 	return $socialTemplate;
 }
+
 $(function(){
 	// Render the DOM
 	renderInitDOM(STORE);
