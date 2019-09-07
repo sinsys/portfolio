@@ -115,7 +115,8 @@ function renderInitDOM(data){
 	$('.projects-wrapper').append($createProjectDOM(data.projects));
 	$('.contact').append($socialLinksDOM(data.social));
 
-	updateProjectDetails(data.projects[0]);
+	$('.author').html(data.profile.name);
+	$('.cr-year').html("&copy; " + data.profile.year);
 }
 // Updates off-canvas project details
 function updateProjectDetails(project, direction){
@@ -242,7 +243,7 @@ function toggleNavMenu(state){
 function scrollToAnchor(target){
     $('html,body').animate({
     	scrollTop: target.offset().top
-    },'slow');
+    },1000);
 }
 
 function $socialLinksDOM(social){
@@ -296,5 +297,18 @@ $(function(){
 	$('.ql-portfolio').on('click', function(){
 		scrollToAnchor($('.projects-target'));
 	})
+
+	$('.nav-about').on('click', function(){
+		scrollToAnchor($('#about-me'));
+		toggleNavMenu(false);
+	});
+	$('.nav-projects').on('click', function(){
+		scrollToAnchor($('#projects'));
+		toggleNavMenu(false);
+	});
+	$('.nav-connect').on('click', function(){
+		scrollToAnchor($('#connect'));
+		toggleNavMenu(false);
+	});
 });
 
