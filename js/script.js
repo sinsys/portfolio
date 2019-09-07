@@ -93,6 +93,13 @@ const STORE = {
 		statement: `I have a yearning passion for learning new things and practicing what I already know. After working with <span class="highlight">AI</span>, <span class="highlight">Machine Learning</span>, <span class="highlight">Kaizen (process improvement)</span>, as well as <span class="highlight">Front/Back End Development</span>, I'm more eager than ever to push the limits on just what else these flourishing fields can accomplish.`,
 		name: "Nicholas Hazel",
 		year: 2019
+	},
+	// Used for social media info
+	social: {
+		facebook: "https://www.facebook.com/NicoSiteDev/",
+		email: "nico.full.stack.dev@gmail.com",
+		twitter: "https://twitter.com/NicoFullStack/",
+		github: "https://github.com/sinsys/"
 	}
 }
 
@@ -106,6 +113,7 @@ function renderInitDOM(data){
 
 	// Render projects into the DOM
 	$('.projects-wrapper').append($createProjectDOM(data.projects));
+	$('.contact').append($socialLinksDOM(data.social));
 }
 
 function expandProject(project, direction){
@@ -244,7 +252,34 @@ function scrollToAnchor(target){
     },'slow');
 }
 
-
+function $socialLinksDOM(social){
+	let $socialTemplate = `
+		<div class="contact-icon">
+			<a href="mailto:${social.email}" target="_blank">
+				<i class="fas fa-envelope"></i>
+				<p class="contact-label">Email</p>
+			</a>
+		</div>
+		<div class="contact-icon">
+			<a href="${social.github}" target="_blank">
+				<i class="fab fa-github"></i>
+				<p class="contact-label">GitHub</p>
+			</a>
+		</div>
+		<div class="contact-icon">
+			<a href="${social.facebook}" target="_blank">
+				<i class="fab fa-facebook"></i>
+				<p class="contact-label">Facebook</p>
+			</a>
+		</div>
+		<div class="contact-icon">
+			<a href="${social.twitter}" target="_blank">
+				<i class="fab fa-twitter"></i>
+				<p class="contact-label">Twitter</p>
+			</a>
+		</div>`;
+	return $socialTemplate;
+}
 $(function(){
 	// Render the DOM
 	renderInitDOM(STORE);
@@ -260,7 +295,7 @@ $(function(){
 	})
 	// Prevent all anchor clicks
 	// This will need to be altered for specific external links
-	$('a').on('click', function(e){
+	$('.mobile-navigation a').on('click', function(e){
 		e.preventDefault();
 	})
 	// Fast scroll to projects on header button
