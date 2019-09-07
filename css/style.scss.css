@@ -71,7 +71,7 @@ html, body {
   border: 2px solid #FF8508;
   margin: 1rem;
   padding: 1.5rem;
-  border-radius: 16px 16px 16px 0;
+  border-radius: 1rem 1rem 1rem 0;
   position: relative;
   text-align: center;
   font-family: "Muli", sans-serif;
@@ -165,9 +165,6 @@ nav.mobile-navigation {
   border: 1px solid #131313; }
 
 /********** ABOUT **********/
-.profile-img {
-  border-radius: 32px; }
-
 .statement {
   display: flex;
   flex-direction: column;
@@ -180,19 +177,13 @@ nav.mobile-navigation {
 
 /********** PROJECTS **********/
 .project-wrapper, .project-wrapper-inverse {
-  background: #333333;
+  background: #131313;
   width: 100%;
   padding: 1rem;
   margin: 1rem 0;
   transition: background 0.3s;
-  border: 1px solid transparent; }
-
-.project-wrapper:hover,
-.project-wrapper:focus,
-.project-wrapper-inverse:hover,
-.project-wrapper-inverse:focus {
-  background: #131313;
-  border: 1px solid #FF8508; }
+  border: 1px solid #333333;
+  border-radius: 1rem; }
 
 /*.project-wrapper:before {
 	position: absolute;
@@ -239,7 +230,13 @@ nav.mobile-navigation {
 
 .project-thumbnail {
   max-width: 100%;
-  cursor: pointer; }
+  cursor: pointer;
+  border: 1px solid #333333;
+  transition: border 0.3s ease; }
+
+.project-thumbnail:hover,
+.project-thumbnail:focus {
+  border-color: #FF8508; }
 
 .vertical-thumb, .horizontal-thumb {
   text-align: center;
@@ -300,10 +297,22 @@ nav.mobile-navigation {
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  text-decoration: none; }
+  text-decoration: none;
+  opacity: 0.75;
+  padding: 0.5rem 0.25rem 0 0.25rem;
+  border: 1px solid #333333;
+  border-radius: 1rem;
+  flex-basis: 40%;
+  transition: background 0.3s ease, opacity 0.3s ease, border 0.3s ease; }
+
+.details-links a:hover,
+.details-links a:focus {
+  background: #333333;
+  opacity: 1;
+  border-color: #FF8508; }
 
 .details-links i {
-  font-size: 48px; }
+  font-size: 42px; }
 
 .details-label {
   text-decoration: none;
@@ -313,7 +322,7 @@ nav.mobile-navigation {
   width: 100%;
   color: #B3D7FF;
   padding: 1rem 0 2px 1rem;
-  border-bottom: 2px solid #FF8508; }
+  border-bottom: 1px dotted #333333; }
 
 /********** CONTACT **********/
 .contact-info-wrapper {
@@ -338,7 +347,7 @@ nav.mobile-navigation {
   opacity: 0.75;
   transition: opacity 0.3s ease, border 0.3s ease, background 0.3s ease, color 0.3s ease, transform 0.3s ease;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 1rem;
   border: 1px solid transparent;
   flex-basis: 20%;
   display: flex;
@@ -399,7 +408,7 @@ footer {
     background-position: top center;
     background-repeat: no-repeat; } }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 550px) {
   .statement {
     flex-direction: row;
     font-size: 2rem; } }

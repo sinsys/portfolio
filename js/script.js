@@ -3,7 +3,7 @@ const STORE = {
 	projects: [
 		{
 			title: "Quiz - Front End Fundamentals",
-			description: "This is a quiz designed to test basic front end principles. It is composed of 50 potential questions organized within 10 categories. The questions and answer order is randomized to ensure a unique test the majority of the time.",
+			description: "This is a quiz designed to test basic front end principles. It is composed of 50 potential questions organized within 10 categories. One random question of each category is asked and the answer order is randomized to ensure a unique test the majority of the time.",
 			// This is used for extended descriptions of each project
 			extDescription: "",
 
@@ -30,7 +30,7 @@ const STORE = {
 			liveLink: "https://sinsys.github.io/quiz-app-remastered/"
 		},{
 			title: "Quiz - Front End Fundamentals",
-			description: "This is a quiz designed to test basic front end principles. It is composed of 50 potential questions organized within 10 categories. The questions and answer order is randomized to ensure a unique test the majority of the time.",
+			description: "This is a quiz designed to test basic front end principles. It is composed of 50 potential questions organized within 10 categories. One random question of each category is asked and the answer order is randomized to ensure a unique test the majority of the time.",
 			// This is used for extended descriptions of each project
 			extDescription: "",
 
@@ -58,7 +58,7 @@ const STORE = {
 		},{
 			// This is all self explanatory
 			title: "Quiz - Front End Fundamentals",
-			description: "This is a quiz designed to test basic front end principles. It is composed of 50 potential questions organized within 10 categories. The questions and answer order is randomized to ensure a unique test the majority of the time.",
+			description: "This is a quiz designed to test basic front end principles. It is composed of 50 potential questions organized within 10 categories. One random question of each category is asked and the answer order is randomized to ensure a unique test the majority of the time.",
 			// This is used for extended descriptions of each project
 			extDescription: "",
 
@@ -190,14 +190,14 @@ function getImgThumbs(project){
 	for(let i=0; i<project.images.portrait.length; i++){
 		$imgThumbs+=`
 			<div class="vertical-thumb">
-				<img class="project-thumbnail" src="${project.images.portrait[i][0]}" alt="${project.images.portrait[i][2]}">
+				<img class="project-thumbnail" src="${project.images.portrait[i][0]}" alt="${project.images.portrait[i][2]}" tabindex="0">
 			</div>
 		`;
 	}
 	for(let i=0; i<project.images.landscape.length; i++){
 		$imgThumbs+=`
 			<div class="horizontal-thumb">
-				<img class="project-thumbnail" src="${project.images.landscape[i][0]}" alt="${project.images.landscape[i][2]}">
+				<img class="project-thumbnail" src="${project.images.landscape[i][0]}" alt="${project.images.landscape[i][2]}" tabindex="0">
 			</div>
 		`;
 	}
