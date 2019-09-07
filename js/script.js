@@ -165,11 +165,11 @@ function $createProjectDOM(projects){
 					</div>
 					<h4 class="project-heading">Links</h4>
 					<div class="details-links">
-						<a href="${curProj.gitHub}">
+						<a href="${curProj.gitHub}" target="_blank">
 							<i class="fab fa-github"></i>
 							<p class="details-label">GitHub Repo</p>
 						</a>
-						<a href="${curProj.liveLink}">
+						<a href="${curProj.liveLink}" target="_blank">
 							<i class="fas fa-leaf"></i>
 							<p class="details-label">Live Link</p>
 						</a>
