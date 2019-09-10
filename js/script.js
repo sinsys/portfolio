@@ -99,7 +99,8 @@ const STORE = {
 		facebook: "https://www.facebook.com/NicoSiteDev/",
 		email: "nico.full.stack.dev@gmail.com",
 		twitter: "https://twitter.com/NicoFullStack/",
-		github: "https://github.com/sinsys/"
+		github: "https://github.com/sinsys/",
+		linkedIn: "https://.linkedin.com/in/nicofullstackdev"
 	}
 }
 
@@ -191,14 +192,14 @@ function getImgThumbs(project){
 	for(let i=0; i<project.images.portrait.length; i++){
 		$imgThumbs+=`
 			<div class="vertical-thumb">
-				<img class="project-thumbnail" src="${project.images.portrait[i][0]}" alt="${project.images.portrait[i][2]}" tabindex="0">
+				<img class="project-thumbnail" src="${project.images.portrait[i][0]}" alt="${project.images.portrait[i][2]}" tabindex="0" data-full-image="${project.images.portrait[i][1]}" data-orientation="portrait">
 			</div>
 		`;
 	}
 	for(let i=0; i<project.images.landscape.length; i++){
 		$imgThumbs+=`
 			<div class="horizontal-thumb">
-				<img class="project-thumbnail" src="${project.images.landscape[i][0]}" alt="${project.images.landscape[i][2]}" tabindex="0">
+				<img class="project-thumbnail" src="${project.images.landscape[i][0]}" alt="${project.images.landscape[i][2]}" tabindex="0" data-full-image="${project.images.landscape[i][1]}" data-orientation="landscape">
 			</div>
 		`;
 	}
@@ -271,6 +272,12 @@ function $socialLinksDOM(social){
 				<i class="fab fa-twitter"></i>
 				<p class="contact-label">Twitter</p>
 			</a>
+		</div>
+		<div class="contact-icon">
+			<a href="${social.linkedIn}" target="_blank">
+				<i class="fab fa-linkedin"></i>
+				<p class="contact-label">LinkedIn</p>
+			</a>
 		</div>`;
 	return $socialTemplate;
 }
@@ -310,5 +317,15 @@ $(function(){
 		scrollToAnchor($('#connect'));
 		toggleNavMenu(false);
 	});
+
+	$('.projects-wrapper').on('click', '.project-thumbnail', function(){
+		console.log($(this).data('full-image'));
+		$('#image-modal').fadeIn();
+    $(this).data('full-image').attr("src", $(img).attr("src")).load(function(){
+        var realWidth = this.width;
+        var realHeight = this.height;
+        console.log("Original width=" + realWidth + ", " + "Original height=" + realHeight);
+    });
+	})
 });
 
