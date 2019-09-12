@@ -100,7 +100,7 @@ const STORE = {
 		email: "nico.full.stack.dev@gmail.com",
 		twitter: "https://twitter.com/NicoFullStack/",
 		github: "https://github.com/sinsys/",
-		linkedIn: "https://.linkedin.com/in/nicofullstackdev"
+		linkedIn: "https://linkedin.com/in/nicofullstackdev"
 	}
 }
 
@@ -232,10 +232,10 @@ function getTechnologies(projectTechs){
 // Open up the mobile navigation menu
 function toggleNavMenu(state){
 	if(state){
-		$('.mobile-navigation').css('right', 0);
+		$('.mobile-navigation').css('right', 0).attr('aria-hidden', false);
 		$('.page-wrapper').css('right', '320px');		
 	} else {
-		$('.mobile-navigation').css('right', '-320px');
+		$('.mobile-navigation').css('right', '-320px').attr('aria-hidden', true);
 		$('.page-wrapper').css('right', 0);
 	}
 }
@@ -282,9 +282,39 @@ function $socialLinksDOM(social){
 	return $socialTemplate;
 }
 
-$(function(){
-	// Render the DOM
-	renderInitDOM(STORE);
+// Function to scale image for the modal display
+function scaleImage(img, wrapper){
+	// Have a fake image to load to test width/height.
+	$('#image-modal').css('opacity', 0).show().attr('aria-hidden', false);
+	// Load a new img with an HTTP request
+	let image = new Image();
+	image.src = img.data('full-image');
+	// After image is loaded, do some aspect ratio calculations to ensure it responsively fills the modal container
+	image.onload = function() {
+		// Calculate aspect ratio of image and the wrapper itself
+		if((this.width / this.height) >= (wrapper.width() / wrapper.height())){
+			// Add max-width: 100% if image has higher aspect ratio
+			$('.modal-img').attr('src', image.src).removeClass('.wide, .tall').addClass('wide');
+		} else {
+			// Add max-height: 100% if image has lower aspect ratio
+			$('.modal-img').attr('src', image.src).removeClass('.wide', '.tall').addClass('tall');
+		}
+		if((this.width / this.height) >= (wrapper.width() / wrapper.height())){
+			// Add max-width: 100% if image has higher aspect ratio
+			$('.modal-img').attr('src', image.src).removeClass('.wide, .tall').addClass('wide');
+		} else {
+			// Add max-height: 100% if image has lower aspect ratio
+			$('.modal-img').attr('src', image.src).removeClass('.wide', '.tall').addClass('tall');
+		}
+		$('#image-modal').css('opacity', 1);
+		// Update image modal text to reflect the alt text of the thumbnail
+		$('.image-modal-alt').text(img.attr('alt'));
+		// Show a background mask to make the original page darker to highlight the modal
+		$('#background-mask').show().addClass('active').css('opacity', 1);
+	}
+}
+
+function eventHandlers(){
 
 	// Event handlers
 	// Open mobile nav menu
@@ -304,28 +334,42 @@ $(function(){
 	$('.ql-portfolio').on('click', function(){
 		scrollToAnchor($('.projects-target'));
 	})
-
+	// Fast scroll to about me
 	$('.nav-about').on('click', function(){
 		scrollToAnchor($('#about-me'));
 		toggleNavMenu(false);
 	});
+	// Fast scroll to projects
 	$('.nav-projects').on('click', function(){
 		scrollToAnchor($('#projects'));
 		toggleNavMenu(false);
 	});
+	// Fast scroll to connect
 	$('.nav-connect').on('click', function(){
 		scrollToAnchor($('#connect'));
 		toggleNavMenu(false);
 	});
-
+	// Show image modal for thumbnails
 	$('.projects-wrapper').on('click', '.project-thumbnail', function(){
-		console.log($(this).data('full-image'));
-		$('#image-modal').fadeIn();
-    $(this).data('full-image').attr("src", $(img).attr("src")).load(function(){
-        var realWidth = this.width;
-        var realHeight = this.height;
-        console.log("Original width=" + realWidth + ", " + "Original height=" + realHeight);
-    });
+		scaleImage($(this), $('.image-modal-image'));
 	})
-});
+	// Hide image modal
+	$('.close-image-modal').on('click', function(){
+		$('#background-mask').removeClass('active');
+		$('#image-modal, #background-mask').css('opacity', 0).hide().attr('aria-hidden', true);
+	})
+	// Extra accessibility for keyboard access
+	$('.close-nav').on('keydown', function(e) {
+		var code = e.which;
+		// 13 = Return, 32 = Space
+		if ((code === 13) || (code === 32)) {
+			$(this).click();
+		}
+	});	
+}
 
+$(function(){
+	// Render the DOM
+	renderInitDOM(STORE);
+	eventHandlers();
+});
