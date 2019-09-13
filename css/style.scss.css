@@ -450,7 +450,7 @@ nav.mobile-navigation {
   align-items: center; }
 
 .contact-icon:hover,
-.contact-icon:focus {
+.contact-icon:focus-within {
   opacity: 1;
   border: 1px solid #666666;
   background: #CCCCCC;
@@ -458,7 +458,7 @@ nav.mobile-navigation {
   transform: scale(1.1); }
 
 .contact-icon:hover a,
-.contact-icon:focus a {
+.contact-icon:focus-within a {
   color: #333333; }
 
 .contact-label {
