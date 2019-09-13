@@ -154,7 +154,7 @@ function $createProjectDOM(projects){
 		let $imgThumbs = getImgThumbs(curProj);
 		let $curProj = `
 			<section class="project">
-				<div class="project-wrapper" tabindex="0">
+				<div class="project-wrapper">
 				<h3 class="project-title">${curProj.title}</h3>
 					<p class="project-desc">${curProj.description}</p>
 					<h4 class="project-heading">Screenshots</h4>
