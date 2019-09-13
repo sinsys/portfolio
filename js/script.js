@@ -313,10 +313,12 @@ function eventHandlers(){
 	// Open mobile nav menu
 	$('.ham-menu').on('click', function(){
 		toggleNavMenu(true);
+		$('.close-nav').focus();
 	})
 	// Close mobile nav menu
 	$('.close-nav').on('click', function(){
 		toggleNavMenu(false);
+		$('.ql-portfolio').focus();
 	})
 	// Prevent all anchor clicks
 	// This will need to be altered for specific external links
@@ -326,33 +328,53 @@ function eventHandlers(){
 	// Fast scroll to projects on header button
 	$('.ql-portfolio').on('click', function(){
 		scrollToAnchor($('.projects-target'));
+
 	})
 	// Fast scroll to about me
 	$('.nav-about').on('click', function(){
 		scrollToAnchor($('#about-me'));
 		toggleNavMenu(false);
+		$('#about-me').focus();
 	});
 	// Fast scroll to projects
 	$('.nav-projects').on('click', function(){
 		scrollToAnchor($('#projects'));
 		toggleNavMenu(false);
+		$('#projects').focus();
 	});
 	// Fast scroll to connect
 	$('.nav-connect').on('click', function(){
 		scrollToAnchor($('#connect'));
 		toggleNavMenu(false);
+		$('#connect').focus();
 	});
 	// Show image modal for thumbnails
 	$('.projects-wrapper').on('click', '.project-thumbnail', function(){
 		scaleImage($(this), $('.image-modal-image'));
+		$('.close-image-modal').focus();
 	})
 	// Hide image modal
 	$('.close-image-modal').on('click', function(){
 		$('#background-mask').removeClass('active');
 		$('#image-modal, #background-mask').css('opacity', 0).hide().attr('aria-hidden', true);
+		$('#projects').focus();
 	})
 	// Extra accessibility for keyboard access
 	$('.close-nav').on('keydown', function(e) {
+		var code = e.which;
+		// 13 = Return, 32 = Space
+		if ((code === 13) || (code === 32)) {
+			$(this).click();
+		}
+	});	
+	$('.project-thumbnail').on('keydown', function(e) {
+		var code = e.which;
+		// 13 = Return, 32 = Space
+		if ((code === 13) || (code === 32)) {
+			$(this).click();
+		}
+	});	
+	$('.close-image-modal').on('keydown', function(e) {
 		var code = e.which;
 		// 13 = Return, 32 = Space
 		if ((code === 13) || (code === 32)) {
@@ -364,5 +386,10 @@ function eventHandlers(){
 $(function(){
 	// Render the DOM
 	renderInitDOM(STORE);
+	
+	// Setup event listeners
 	eventHandlers();
+
+	// Apply focus to correct area
+	$('.ql-portfolio').focus();
 });
