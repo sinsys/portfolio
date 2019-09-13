@@ -192,14 +192,14 @@ function getImgThumbs(project){
 	for(let i=0; i<project.images.portrait.length; i++){
 		$imgThumbs+=`
 			<div class="vertical-thumb">
-				<img class="project-thumbnail" src="${project.images.portrait[i][0]}" alt="${project.images.portrait[i][2]}" tabindex="0" data-full-image="${project.images.portrait[i][1]}" data-orientation="portrait" title="${project.image.portrait[i][2]}">
+				<img class="project-thumbnail" src="${project.images.portrait[i][0]}" alt="${project.images.portrait[i][2]}" tabindex="0" data-full-image="${project.images.portrait[i][1]}" data-orientation="portrait" title="${project.images.portrait[i][2]}">
 			</div>
 		`;
 	}
 	for(let i=0; i<project.images.landscape.length; i++){
 		$imgThumbs+=`
 			<div class="horizontal-thumb">
-				<img class="project-thumbnail" src="${project.images.landscape[i][0]}" alt="${project.images.landscape[i][2]}" tabindex="0" data-full-image="${project.images.landscape[i][1]}" data-orientation="landscape" title="${project.image.portrait[i][2]}">
+				<img class="project-thumbnail" src="${project.images.landscape[i][0]}" alt="${project.images.landscape[i][2]}" tabindex="0" data-full-image="${project.images.landscape[i][1]}" data-orientation="landscape" title="${project.images.portrait[i][2]}">
 			</div>
 		`;
 	}
