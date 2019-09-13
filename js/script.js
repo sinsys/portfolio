@@ -192,14 +192,14 @@ function getImgThumbs(project){
 	for(let i=0; i<project.images.portrait.length; i++){
 		$imgThumbs+=`
 			<div class="vertical-thumb">
-				<img class="project-thumbnail" src="${project.images.portrait[i][0]}" alt="${project.images.portrait[i][2]}" tabindex="0" data-full-image="${project.images.portrait[i][1]}" data-orientation="portrait">
+				<img class="project-thumbnail" src="${project.images.portrait[i][0]}" alt="${project.images.portrait[i][2]}" tabindex="0" data-full-image="${project.images.portrait[i][1]}" data-orientation="portrait" title="${project.image.portrait[i][2]}">
 			</div>
 		`;
 	}
 	for(let i=0; i<project.images.landscape.length; i++){
 		$imgThumbs+=`
 			<div class="horizontal-thumb">
-				<img class="project-thumbnail" src="${project.images.landscape[i][0]}" alt="${project.images.landscape[i][2]}" tabindex="0" data-full-image="${project.images.landscape[i][1]}" data-orientation="landscape">
+				<img class="project-thumbnail" src="${project.images.landscape[i][0]}" alt="${project.images.landscape[i][2]}" tabindex="0" data-full-image="${project.images.landscape[i][1]}" data-orientation="landscape" title="${project.image.portrait[i][2]}">
 			</div>
 		`;
 	}
@@ -213,13 +213,13 @@ function getTechnologies(projectTechs){
 	for(let i=0; i<projectTechs.length; i++){
 		// Used a switch statement for easy maintenance of future technologies that may be included
 		switch(projectTechs[i]){
-			case "HTML5": $technologyIcons+='<i class="fab fa-html5"></i>';
+			case "HTML5": $technologyIcons+='<i class="fab fa-html5" title="HTML5"></i>';
 				break;
-			case "CSS3": $technologyIcons+='<i class="fab fa-css3-alt"></i>';
+			case "CSS3": $technologyIcons+='<i class="fab fa-css3-alt" title="CSS3"></i>';
 				break;
-			case "JS (ES6)": $technologyIcons+='<i class="fab fa-js-square"></i>';
+			case "JS (ES6)": $technologyIcons+='<i class="fab fa-js-square" title="JS (ES6)"></i>';
 				break;
-			case "jQuery": $technologyIcons+='<i class="jquery-icon"></i>';
+			case "jQuery": $technologyIcons+='<i class="jquery-icon" title="jQuery"></i>';
 				break;
 			default:
 				break;
@@ -294,17 +294,10 @@ function scaleImage(img, wrapper){
 		// Calculate aspect ratio of image and the wrapper itself
 		if((this.width / this.height) >= (wrapper.width() / wrapper.height())){
 			// Add max-width: 100% if image has higher aspect ratio
-			$('.modal-img').attr('src', image.src).removeClass('.wide, .tall').addClass('wide');
+			$('.modal-img').attr({'src': image.src, 'alt': img.attr('alt'), 'title': img.attr('alt')}).removeClass('.wide, .tall').addClass('wide');
 		} else {
 			// Add max-height: 100% if image has lower aspect ratio
-			$('.modal-img').attr('src', image.src).removeClass('.wide', '.tall').addClass('tall');
-		}
-		if((this.width / this.height) >= (wrapper.width() / wrapper.height())){
-			// Add max-width: 100% if image has higher aspect ratio
-			$('.modal-img').attr('src', image.src).removeClass('.wide, .tall').addClass('wide');
-		} else {
-			// Add max-height: 100% if image has lower aspect ratio
-			$('.modal-img').attr('src', image.src).removeClass('.wide', '.tall').addClass('tall');
+			$('.modal-img').attr({'src': image.src, 'alt': img.attr('alt'), 'title': img.attr('alt')}).removeClass('.wide', '.tall').addClass('tall');
 		}
 		$('#image-modal').css('opacity', 1);
 		// Update image modal text to reflect the alt text of the thumbnail
