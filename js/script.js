@@ -28,9 +28,10 @@ const STORE = {
 			technologies: ["HTML5", "CSS3", "JS (ES6)", "jQuery"],
 			gitHub: "https://github.com/sinsys/quiz-app-remastered/",
 			liveLink: "https://sinsys.github.io/quiz-app-remastered/"
-		},{
-			title: "Quiz - Front End Fundamentals",
-			description: "This is a quiz designed to test basic front end principles. It is composed of 50 potential questions organized within 10 categories. One random question of each category is asked and the answer order is randomized to ensure a unique test the majority of the time.",
+		},
+		{
+			title: "Clash Royale - Top Tier Cards",
+			description: "This application allows users to view the highest average win-rate cards for the top 200 player's prior 25 battles.",
 			// This is used for extended descriptions of each project
 			extDescription: "",
 
@@ -39,50 +40,22 @@ const STORE = {
 			// It may make more sense to display one or the other later
 			images: {
 				portrait: [
-					["img/projects/quiz-app/thumbs/mobile-mid-quiz-thumb.jpg", 
-						"img/projects/quiz-app/mobile-mid-quiz-full.jpg", 
-						"Middle of the quiz image"],
-					["img/projects/quiz-app/thumbs/mobile-results-thumb.jpg", 
-						"img/projects/quiz-app/mobile-results-full.jpg", 
-						"End of quiz image"],
+					["img/projects/top-tier-cards/thumbs/mobile-mid-results-thumb.jpg", 
+						"img/projects/top-tier-cards/mobile-mid-results-full.jpg", 
+						"Middle of querying"],
+					["img/projects/top-tier-cards/thumbs/mobile-full-results-thumb.jpg", 
+						"img/projects/top-tier-cards/mobile-full-results-full.jpg", 
+						"Results of queries"],
 				],
 				landscape: [
-					["img/projects/quiz-app/thumbs/quiz-app-mid-quiz-thumb.jpg", 
-						"img/projects/quiz-app/quiz-app-mid-quiz-full.jpg", 
+					["img/projects/top-tier-cards/thumbs/desktop-full-results-thumb.jpg", 
+						"img/projects/top-tier-cards/desktop-full-results-full.jpg", 
 						"End of quiz image"],
 				]
 			},
 			technologies: ["HTML5", "CSS3", "JS (ES6)", "jQuery"],
-			gitHub: "https://github.com/sinsys/quiz-app-remastered/",
-			liveLink: "https://sinsys.github.io/quiz-app-remastered/"
-		},{
-			// This is all self explanatory
-			title: "Quiz - Front End Fundamentals",
-			description: "This is a quiz designed to test basic front end principles. It is composed of 50 potential questions organized within 10 categories. One random question of each category is asked and the answer order is randomized to ensure a unique test the majority of the time.",
-			// This is used for extended descriptions of each project
-			extDescription: "",
-
-			// Images will be stored in two keys for display purposes
-			// Portrait and Landscape
-			// It may make more sense to display one or the other later
-			images: {
-				portrait: [
-					["img/projects/quiz-app/thumbs/mobile-mid-quiz-thumb.jpg", 
-						"img/projects/quiz-app/mobile-mid-quiz-full.jpg", 
-						"Middle of the quiz image"],
-					["img/projects/quiz-app/thumbs/mobile-results-thumb.jpg", 
-						"img/projects/quiz-app/mobile-results-full.jpg", 
-						"End of quiz image"],
-				],
-				landscape: [
-					["img/projects/quiz-app/thumbs/quiz-app-mid-quiz-thumb.jpg", 
-						"img/projects/quiz-app/quiz-app-mid-quiz-full.jpg", 
-						"End of quiz image"],
-				]
-			},
-			technologies: ["HTML5", "CSS3", "JS (ES6)", "jQuery"],
-			gitHub: "https://github.com/sinsys/quiz-app-remastered/",
-			liveLink: "https://sinsys.github.io/quiz-app-remastered/"
+			gitHub: "https://github.com/sinsys/top-tier-cards",
+			liveLink: "https://sinsys.github.io/top-tier-cards/"
 		}
 	],
 	// Key info about the profile that I can edit in one place if needed
