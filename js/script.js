@@ -32,12 +32,7 @@ const STORE = {
 		{
 			title: "Clash Royale - Top Tier Cards",
 			description: "This application allows users to view the highest average win-rate cards for the top 200 player's prior 25 battles.",
-			// This is used for extended descriptions of each project
 			extDescription: "",
-
-			// Images will be stored in two keys for display purposes
-			// Portrait and Landscape
-			// It may make more sense to display one or the other later
 			images: {
 				portrait: [
 					["img/projects/top-tier-cards/thumbs/mobile-mid-results-thumb.jpg", 
@@ -45,12 +40,12 @@ const STORE = {
 						"Middle of querying"],
 					["img/projects/top-tier-cards/thumbs/mobile-full-results-thumb.jpg", 
 						"img/projects/top-tier-cards/mobile-full-results-full.jpg", 
-						"Results of queries"],
+						"Results of queries - Mobile"],
 				],
 				landscape: [
 					["img/projects/top-tier-cards/thumbs/desktop-full-results-thumb.jpg", 
 						"img/projects/top-tier-cards/desktop-full-results-full.jpg", 
-						"End of quiz image"],
+						"Results of queries - Desktop"],
 				]
 			},
 			technologies: ["HTML5", "CSS3", "JS (ES6)", "jQuery"],
