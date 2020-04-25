@@ -37,7 +37,7 @@ I&#39;ve worked with a lot of tech companies. Its not about what or who you know
     - **Repository:** https://github.com/sinsys/taskmon_client/
     - **Screenshots** 
         - [![Taskmon - Task Monitor (project details)](https://github.com/sinsys/portfolio/blob/master/img/projects/taskmon/thumbs/desktop-project-details-thumb.jpg?raw=true)](https://github.com/sinsys/portfolio/blob/master/img/projects/taskmon/desktop-project-details-full.jpg?raw=true)
-        - [![Taskmon - Task Monitor (dashboard)](https://github.com/sinsys/portfolio/blob/master/img/projects/taskmon/thumbs/mobile-dashboard-details-thumb.jpg?raw=true)](https://github.com/sinsys/portfolio/blob/master/img/projects/taskmon/mobile-dashboard-full.jpg?raw=true)
+        - [![Taskmon - Task Monitor (dashboard)](https://github.com/sinsys/portfolio/blob/master/img/projects/taskmon/thumbs/mobile-dashboard-thumb.jpg?raw=true)](https://github.com/sinsys/portfolio/blob/master/img/projects/taskmon/mobile-dashboard-full.jpg?raw=true)
 
 - **Quiz - Front End Fundamentals**
     - **Description:**  This is a Quiz app designed to test basic knowledge of the front-end fundamentals for web development. It consists of 50 total questions within 10 categories. One random question is selected per category to ensure that the quiz will only very rarely be the same.
@@ -51,9 +51,3 @@ I&#39;ve worked with a lot of tech companies. Its not about what or who you know
     - **Screenshots** 
         - [![Quiz - Front End Fundamentals (mid quiz)](https://github.com/sinsys/portfolio/blob/master/img/projects/quiz-app/thumbs/quiz-app-mid-quiz-thumb.jpg?raw=true)](https://github.com/sinsys/portfolio/blob/master/img/projects/quiz-app/quiz-app-mid-quiz-full.jpg?raw=true)
         - [![Quiz - Front End Fundamentals (finished)](https://github.com/sinsys/portfolio/blob/master/img/projects/quiz-app/thumbs/quiz-app-quiz-end-thumb.jpg?raw=true)](https://github.com/sinsys/portfolio/master/img/projects/quiz-app/quiz-app-quiz-end-full.jpg?raw=true)
-
-let restaurant = this.state.restaurants[this.state.currentRestaurant];
-
-let restaurantImg = restaurant.imageSrc !== ''
-  ? <img src={restaurant.imageSrc} alt={restaurant.name} />
-  : <span>No restaurant image</span>;
