@@ -24,8 +24,8 @@ I&#39;ve worked with a lot of tech companies. Its not about what or who you know
     - **Live App:** https://amazement.now.sh/
     - **Repository:** https://github.com/sinsys/amazement_client/
     - **Screenshots** 
-        - [![aMAZEment - Maze Runner (results)](https://github.com/sinsys/portfolio/blob/master/img/projects/amazement/desktop-results-full.jpg?raw=true)](https://github.com/sinsys/portfolio/blob/master/img/projects/amazement/desktop-results-full.jpg?raw=true")
-        - [![aMAZEment - Maze Runner (mid-maze)](https://github.com/sinsys/portfolio/blob/master/img/projects/amazement/mobile-mid-maze-full.jpg?raw=true)](https://github.com/sinsys/portfolio/blob/master/img/projects/quiz-app/quiz-app-quiz-end-full.jpg?raw=true")
+        - [![aMAZEment - Maze Runner (results)](https://github.com/sinsys/portfolio/blob/master/img/projects/amazement/thumb/desktop-results-full.jpg?raw=true)](https://github.com/sinsys/portfolio/blob/master/img/projects/amazement/desktop-results-full.jpg?raw=true")
+        - [![aMAZEment - Maze Runner (mid-maze)](https://github.com/sinsys/portfolio/blob/master/img/projects/amazement/thumb/mobile-mid-maze-full.jpg?raw=true)](https://github.com/sinsys/portfolio/blob/master/img/projects/quiz-app/quiz-app-quiz-end-full.jpg?raw=true")
 
 - **Quiz - Front End Fundamentals**
     - **Description:**  This is a Quiz app designed to test basic knowledge of the front-end fundamentals for web development. It consists of 50 total questions within 10 categories. One random question is selected per category to ensure that the quiz will only very rarely be the same.
