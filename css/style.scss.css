@@ -139,10 +139,12 @@ html, body {
 }*/
 .modal-img.wide {
   width: 100%; 
+  height: auto;
 }
 
 .modal-img.tall {
   height: 100%;
+  width: auto;
 }
 
 #background-mask {
