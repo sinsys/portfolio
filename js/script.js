@@ -23,7 +23,7 @@ const STORE = {
           ]
         ]
       },
-      technologies: ["HTML5", "ReactJS", "NodeJS", "PostgreSQL"],
+      technologies: ["ReactJS", "NodeJS", "PostgreSQL"],
       gitHub: "https://github.com/sinsys/amazement_client/",
       liveLink: "https://amazement.now.sh/"
     },
@@ -49,7 +49,7 @@ const STORE = {
           ]
         ]
       },
-      technologies: ["HTML5", "ReactJS", "NodeJS", "PostgreSQL"],
+      technologies: ["ReactJS", "NodeJS", "PostgreSQL"],
       gitHub: "https://github.com/sinsys/taskmon_client/",
       liveLink: "https://taskmon.now.sh/"
     },
