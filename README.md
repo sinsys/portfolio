@@ -24,8 +24,8 @@ I&#39;ve worked with a lot of tech companies. Its not about what or who you know
     - **Live App:** https://amazement.now.sh/
     - **Repository:** https://github.com/sinsys/amazement_client/
     - **Screenshots** 
-        - [![aMAZEment - Maze Runner (results)](https://github.com/sinsys/portfolio/blob/master/img/projects/amazement/thumb/desktop-results-full.jpg?raw=true)](https://github.com/sinsys/portfolio/blob/master/img/projects/amazement/desktop-results-full.jpg?raw=true")
-        - [![aMAZEment - Maze Runner (mid-maze)](https://github.com/sinsys/portfolio/blob/master/img/projects/amazement/thumb/mobile-mid-maze-full.jpg?raw=true)](https://github.com/sinsys/portfolio/blob/master/img/projects/quiz-app/quiz-app-quiz-end-full.jpg?raw=true")
+        - [![aMAZEment - Maze Runner (results)](https://github.com/sinsys/portfolio/blob/master/img/projects/amazement/thumbs/desktop-results-full.jpg?raw=true)](https://github.com/sinsys/portfolio/blob/master/img/projects/amazement/desktop-results-full.jpg?raw=true)
+        - [![aMAZEment - Maze Runner (mid-maze)](https://github.com/sinsys/portfolio/blob/master/img/projects/amazement/thumbs/mobile-mid-maze-full.jpg?raw=true)](https://github.com/sinsys/portfolio/blob/master/img/projects/quiz-app/quiz-app-quiz-end-full.jpg?raw=true)
 
 - **Quiz - Front End Fundamentals**
     - **Description:**  This is a Quiz app designed to test basic knowledge of the front-end fundamentals for web development. It consists of 50 total questions within 10 categories. One random question is selected per category to ensure that the quiz will only very rarely be the same.
@@ -37,11 +37,11 @@ I&#39;ve worked with a lot of tech companies. Its not about what or who you know
     - **Live App:** https://sinsys.github.io/quiz-app-remastered/
     - **Repository:** https://github.com/sinsys/quiz-app-remastered
     - **Screenshots** 
-        - [![Quiz - Front End Fundamentals (mid quiz)](https://github.com/sinsys/portfolio/blob/master/img/projects/quiz-app/thumbs/quiz-app-mid-quiz-thumb.jpg?raw=true)](https://github.com/sinsys/portfolio/blob/master/img/projects/quiz-app/quiz-app-mid-quiz-full.jpg?raw=true")
-        - [![Quiz - Front End Fundamentals (finished)](https://github.com/sinsys/portfolio/blob/master/img/projects/quiz-app/thumbs/quiz-app-quiz-end-thumb.jpg?raw=true)](https://github.com/sinsys/portfolio/master/img/projects/quiz-app/quiz-app-quiz-end-full.jpg?raw=true")
+        - [![Quiz - Front End Fundamentals (mid quiz)](https://github.com/sinsys/portfolio/blob/master/img/projects/quiz-app/thumbs/quiz-app-mid-quiz-thumb.jpg?raw=true)](https://github.com/sinsys/portfolio/blob/master/img/projects/quiz-app/quiz-app-mid-quiz-full.jpg?raw=true)
+        - [![Quiz - Front End Fundamentals (finished)](https://github.com/sinsys/portfolio/blob/master/img/projects/quiz-app/thumbs/quiz-app-quiz-end-thumb.jpg?raw=true)](https://github.com/sinsys/portfolio/master/img/projects/quiz-app/quiz-app-quiz-end-full.jpg?raw=true)
 
 ## Assets
 - Profile picture 
-    - [![Profile picture](https://github.com/sinsys/portfolio/blob/master/img/profile-pic-128.png?raw=true)](https://github.com/sinsys/portfolio/blob/master/img/profile-pic-256.png?raw=true")
+    - [![Profile picture](https://github.com/sinsys/portfolio/blob/master/img/profile-pic-128.png?raw=true)](https://github.com/sinsys/portfolio/blob/master/img/profile-pic-256.png?raw=true)
 - GitHub Icon
-    - [![GitHub Icon](https://github.com/sinsys/portfolio/blob/master/img/github-dark-64.png?raw=true)](https://github.com/sinsys/portfolio/blob/master/img/github-dark-64.png?raw=true")
+    - [![GitHub Icon](https://github.com/sinsys/portfolio/blob/master/img/github-dark-64.png?raw=true)](https://github.com/sinsys/portfolio/blob/master/img/github-dark-64.png?raw=true)
