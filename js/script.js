@@ -1,6 +1,58 @@
 const STORE = {
 	// Make a key for projects as an array of our projects
 	projects: [
+    {
+      title: "aMAZEment",
+      description: "aMAZEment is a maze runner style game where you have to navigate through a randomly generated maze as quickly as possible. Your run will be timed and a leaderboard will display the best runners out there!",
+      extDescription: "",
+      images: {
+        portrait: [
+          ["img/projects/amazement/thumbs/mobile-start-maze-thumb.jpg",
+            "img/projects/amazement/mobile-start-maze-full.jpg",
+            "Start new game"
+          ],
+          ["img/projects/amazement/thumbs/mobile-mid-maze-thumb.jpg",
+            "img/projects/amazement/mobile-mid-maze-full.jpg",
+            "Middle of the maze"
+          ]
+        ],
+        landscape: [
+          ["img/projects/amazement/thumbs/desktop-results-thumb.jpg",
+            "img/projects/amazement/desktop-results-full.jpg",
+            "Results screen"
+          ]
+        ]
+      },
+      technologies: ["HTML5", "CSS3", "ReactJS", "NodeJS", "PostgreSQL"],
+      gitHub: "https://github.com/sinsys/amazement_client/",
+      liveLink: "https://amazement.now.sh/"
+    },
+    {
+      title: "Taskmon - Task Monitor",
+      description: "This is a task manager application intended to provide a sense of urgency on projects. Instead of displaying the traditional due date of a project or task, this application displays a constant countdown timer showing you how much time you have left to complete the task.",
+      extDescription: "",
+      images: {
+        portrait: [
+          ["img/projects/taskmon/thumbs/mobile-dashboard-thumb.jpg",
+            "img/projects/taskmon/mobile-dashboard-full.jpg",
+            "Dashboard image"
+          ],
+          ["img/projects/taskmon/thumbs/mobile-task-details-thumb.jpg",
+            "img/projects/taskmon/mobile-task-details-full.jpg",
+            "Task details"
+          ]
+        ],
+        landscape: [
+          ["img/projects/taskmon/thumbs/desktop-project-details-thumb.jpg",
+            "img/projects/taskmon/desktop-project-details-full.jpg",
+            "Project details"
+          ]
+        ]
+      },
+      technologies: ["HTML5", "CSS3", "ReactJS", "NodeJS", "PostgreSQL"],
+      gitHub: "https://github.com/sinsys/taskmon_client/",
+      liveLink: "https://taskmon.now.sh/"
+    },
 		{
 			title: "Quiz - Front End Fundamentals",
 			description: "This is a quiz designed to test basic front end principles. It is composed of 50 potential questions organized within 10 categories. One random question of each category is asked and the answer order is randomized to ensure a unique test the majority of the time.",
@@ -28,30 +80,30 @@ const STORE = {
 			technologies: ["HTML5", "CSS3", "JS (ES6)", "jQuery"],
 			gitHub: "https://github.com/sinsys/quiz-app-remastered/",
 			liveLink: "https://sinsys.github.io/quiz-app-remastered/"
-		},
-		{
-			title: "Clash Royale - Top Tier Cards",
-			description: "This application allows users to view the highest average win-rate cards for the top 200 player's prior 25 battles.",
-			extDescription: "",
-			images: {
-				portrait: [
-					["img/projects/top-tier-cards/thumbs/mobile-mid-results-thumb.jpg", 
-						"img/projects/top-tier-cards/mobile-mid-results-full.jpg", 
-						"Middle of querying"],
-					["img/projects/top-tier-cards/thumbs/mobile-full-results-thumb.jpg", 
-						"img/projects/top-tier-cards/mobile-full-results-full.jpg", 
-						"Results of queries - Mobile"],
-				],
-				landscape: [
-					["img/projects/top-tier-cards/thumbs/desktop-full-results-thumb.jpg", 
-						"img/projects/top-tier-cards/desktop-full-results-full.jpg", 
-						"Results of queries - Desktop"],
-				]
-			},
-			technologies: ["HTML5", "CSS3", "JS (ES6)", "jQuery"],
-			gitHub: "https://github.com/sinsys/top-tier-cards",
-			liveLink: "https://sinsys.github.io/top-tier-cards/"
-		}
+    }
+		// {
+		// 	title: "Clash Royale - Top Tier Cards",
+		// 	description: "This application allows users to view the highest average win-rate cards for the top 200 player's prior 25 battles.",
+		// 	extDescription: "",
+		// 	images: {
+		// 		portrait: [
+		// 			["img/projects/top-tier-cards/thumbs/mobile-mid-results-thumb.jpg", 
+		// 				"img/projects/top-tier-cards/mobile-mid-results-full.jpg", 
+		// 				"Middle of querying"],
+		// 			["img/projects/top-tier-cards/thumbs/mobile-full-results-thumb.jpg", 
+		// 				"img/projects/top-tier-cards/mobile-full-results-full.jpg", 
+		// 				"Results of queries - Mobile"],
+		// 		],
+		// 		landscape: [
+		// 			["img/projects/top-tier-cards/thumbs/desktop-full-results-thumb.jpg", 
+		// 				"img/projects/top-tier-cards/desktop-full-results-full.jpg", 
+		// 				"Results of queries - Desktop"],
+		// 		]
+		// 	},
+		// 	technologies: ["HTML5", "CSS3", "JS (ES6)", "jQuery"],
+		// 	gitHub: "https://github.com/sinsys/top-tier-cards",
+		// 	liveLink: "https://sinsys.github.io/top-tier-cards/"
+		// }
 	],
 	// Key info about the profile that I can edit in one place if needed
 	profile: {
@@ -119,7 +171,7 @@ function $createProjectDOM(projects){
 	for(let i=0; i<projects.length; i++){
 		let curProj = projects[i];
 		let $techIcons = getTechnologies(curProj.technologies);
-		let $imgThumbs = getImgThumbs(curProj);
+		let $imgThumbs = getImgThumbs(curProj, i);
 		let $curProj = `
 			<section class="project">
 				<div class="project-wrapper">
@@ -154,23 +206,41 @@ function $createProjectDOM(projects){
 }
 
 // Returns a collection of all images of a project into a $DOM element
-function getImgThumbs(project){
+function getImgThumbs(project, index){
 	let $imgThumbs = ``;
 
-	for(let i=0; i<project.images.portrait.length; i++){
-		$imgThumbs+=`
-			<div class="vertical-thumb">
-				<img class="project-thumbnail" src="${project.images.portrait[i][0]}" alt="${project.images.portrait[i][2]}" tabindex="0" data-full-image="${project.images.portrait[i][1]}" data-orientation="portrait" title="${project.images.portrait[i][2]}">
-			</div>
-		`;
-	}
-	for(let i=0; i<project.images.landscape.length; i++){
-		$imgThumbs+=`
-			<div class="horizontal-thumb">
-				<img class="project-thumbnail" src="${project.images.landscape[i][0]}" alt="${project.images.landscape[i][2]}" tabindex="0" data-full-image="${project.images.landscape[i][1]}" data-orientation="landscape" title="${project.images.portrait[i][2]}">
-			</div>
-		`;
-	}
+  if ( index % 2 === 0 ) {
+    for(let i=0; i<project.images.landscape.length; i++){
+      $imgThumbs+=`
+        <div class="horizontal-thumb">
+          <img class="project-thumbnail" src="${project.images.landscape[i][0]}" alt="${project.images.landscape[i][2]}" tabindex="0" data-full-image="${project.images.landscape[i][1]}" data-orientation="landscape" title="${project.images.portrait[i][2]}">
+        </div>
+      `;
+    };
+    for(let i=0; i<project.images.portrait.length; i++){
+      $imgThumbs+=`
+        <div class="vertical-thumb">
+          <img class="project-thumbnail" src="${project.images.portrait[i][0]}" alt="${project.images.portrait[i][2]}" tabindex="0" data-full-image="${project.images.portrait[i][1]}" data-orientation="portrait" title="${project.images.portrait[i][2]}">
+        </div>
+      `;
+    }
+  } else {
+    for(let i=0; i<project.images.portrait.length; i++){
+      $imgThumbs+=`
+        <div class="vertical-thumb">
+          <img class="project-thumbnail" src="${project.images.portrait[i][0]}" alt="${project.images.portrait[i][2]}" tabindex="0" data-full-image="${project.images.portrait[i][1]}" data-orientation="portrait" title="${project.images.portrait[i][2]}">
+        </div>
+      `;
+    }
+    for(let i=0; i<project.images.landscape.length; i++){
+      $imgThumbs+=`
+        <div class="horizontal-thumb">
+          <img class="project-thumbnail" src="${project.images.landscape[i][0]}" alt="${project.images.landscape[i][2]}" tabindex="0" data-full-image="${project.images.landscape[i][1]}" data-orientation="landscape" title="${project.images.portrait[i][2]}">
+        </div>
+      `;
+    }
+  }
+
 
 	return $imgThumbs;
 }
@@ -188,7 +258,13 @@ function getTechnologies(projectTechs){
 			case "JS (ES6)": $technologyIcons+='<i class="fab fa-js-square" title="JS (ES6)"></i>';
 				break;
 			case "jQuery": $technologyIcons+='<i class="jquery-icon" title="jQuery"></i>';
-				break;
+        break;
+      case "ReactJS": $technologyIcons+='<i class="react-icon" title="ReactJS"></i>';
+        break;
+      case "NodeJS": $technologyIcons+='<i class="nodejs-icon" title="NodeJS"></i>';
+        break;
+      case "PostgreSQL": $technologyIcons+='<i class="postgresql-icon" title="PostgreSQL"></i>';
+        break;      
 			default:
 				break;
 		}

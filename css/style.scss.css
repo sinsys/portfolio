@@ -138,10 +138,12 @@ html, body {
 	max-height: 100%;
 }*/
 .modal-img.wide {
-  max-width: 100%; }
+  width: 100%; 
+  height: auto;}
 
 .modal-img.tall {
-  max-height: 100%; }
+  height: 100%; 
+  width: auto;}
 
 #background-mask {
   display: none;
@@ -373,6 +375,29 @@ nav.mobile-navigation {
   width: 64px;
   height: 64px;
   background: url(../img/technologies/jquery.png);
+  background-size: 64px 64px; }
+
+.react-icon {
+  display: block;
+  text-indent: -9999px;
+  width: 64px;
+  height: 64px;
+  background: url(../img/technologies/react.png);
+  background-size: 64px 64px; }
+.technologies .nodejs-icon {
+  display: block;
+  text-indent: -9999px;
+  width: 64px;
+  height: 39px;
+  background: url(../img/technologies/nodejs.png);
+  background-size: 64px 39px; }
+
+.postgresql-icon {
+  display: block;
+  text-indent: -9999px;
+  width: 64px;
+  height: 64px;
+  background: url(../img/technologies/postgresql.png);
   background-size: 64px 64px; }
 
 .fa-leaf {
