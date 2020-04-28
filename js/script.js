@@ -4,7 +4,9 @@ const STORE = {
     {
       title: "aMAZEment",
       description: "aMAZEment is a maze runner style game where you have to navigate through a randomly generated maze as quickly as possible. Your run will be timed and a leaderboard will display the best runners out there!",
-      extDescription: "",
+      purpose: "To run through a maze and get the quickest time.",
+      why: "To challenge myself on using HTML canvas and maze-creation algorithms.",
+      who: "Whoever wants to play a maze game.",
       images: {
         portrait: [
           ["img/projects/amazement/thumbs/mobile-start-maze-thumb.jpg",
@@ -30,7 +32,9 @@ const STORE = {
     {
       title: "Taskmon - Task Monitor",
       description: "This is a task manager application intended to provide a sense of urgency on projects. Instead of displaying the traditional due date of a project or task, this application displays a constant countdown timer showing you how much time you have left to complete the task.",
-      extDescription: "",
+      purpose: "To provide a sense of urgency when managing tasks or projects.",
+      why: "To provide a different style of task app that provides a sense of urgency when managing tasks or projects.",
+      who: "Whoever wants to add a sense of urgency to their task or project management.",
       images: {
         portrait: [
           ["img/projects/taskmon/thumbs/mobile-dashboard-thumb.jpg",
@@ -57,7 +61,9 @@ const STORE = {
 			title: "Quiz - Front End Fundamentals",
 			description: "This is a quiz designed to test basic front end principles. It is composed of 50 potential questions organized within 10 categories. One random question of each category is asked and the answer order is randomized to ensure a unique test the majority of the time.",
 			// This is used for extended descriptions of each project
-			extDescription: "",
+      purpose: "To test knowledge on front-end principles.",
+      why: "To offer a simple, interactive way to test knowledge on front-end principles.",
+      who: "Anybody who wants to test their knowledge on front-end principles.",
 
 			// Images will be stored in two keys for display purposes
 			// Portrait and Landscape
@@ -110,7 +116,7 @@ const STORE = {
 		title: "Web developer too stubborn to accept bad practices",
 		subtitle: "newTech && refactoring > oldHacks && spaghetti",
 		profileImg: ["./img/profile-pic-128.png", "./img/profile-pic-256.png"],
-		statement: `I have a yearning passion for learning new things and practicing what I already know. After working with <span class="highlight">AI</span>, <span class="highlight">Machine Learning</span>, <span class="highlight">Kaizen (process improvement)</span>, as well as <span class="highlight">Front/Back End Development</span>, I'm more eager than ever to push the limits on just what else these flourishing fields can accomplish.`,
+		statement: `I have a yearning passion for learning new things and practicing what I already know. After working with <span class="highlight">AI</span>, <span class="highlight">Machine Learning</span>, <span class="highlight">Kaizen (process improvement)</span>, as well as <span class="highlight">Front/Back End Development</span>, I'm more eager than ever to push the limits on just what else these flourishing fields can accomplish with an agile team.`,
 		name: "Nicholas Hazel",
 		year: 2019
 	},
@@ -142,7 +148,7 @@ function renderInitDOM(data){
 // Updates off-canvas project details
 function updateProjectDetails(project, direction){
 	$('.details-title').html(project.title);
-	$('.details-description').html(project.description);
+  $('.details-description').html(project.description);
 	$('.details-images').html(getImgThumbs(project, "normal"));
 	$('.details-technologies').html(getTechnologies(project.technologies));
 	$('.details-links').html(`
@@ -176,7 +182,10 @@ function $createProjectDOM(projects){
 			<section class="project">
 				<div class="project-wrapper">
 				<h3 class="project-title">${curProj.title}</h3>
-					<p class="project-desc">${curProj.description}</p>
+          <p class="project-desc">${curProj.description}</p>
+          <p><strong>Purpose: </strong>${curProj.purpose}</p>
+          <p><strong>Who its for: </strong>${curProj.who}</p>
+          <p><strong>Why its built: </strong>${curProj.why}</p>
 					<h4 class="project-heading">Screenshots</h4>
 					<div class="project-thumbnails">
 						${$imgThumbs}
