@@ -22,7 +22,9 @@ a, a:visited, a:active, a:hover, a:focus, p, blockquote, span, li {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Shrikhand", cursive;
   letter-spacing: 0.1rem; }
-
+h6 {
+  display: none;
+}
 p, blockquote {
   line-height: 20px; }
 
