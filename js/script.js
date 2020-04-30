@@ -116,7 +116,7 @@ const STORE = {
 		title: "Web developer too stubborn to accept bad practices",
 		subtitle: "newTech && refactoring > oldHacks && spaghetti",
 		profileImg: ["./img/profile-pic-128.png", "./img/profile-pic-256.png"],
-		statement: `I have a yearning passion for learning new things and practicing what I already know. After working with <span class="highlight">AI</span>, <span class="highlight">Machine Learning</span>, <span class="highlight">Kaizen (process improvement)</span>, as well as <span class="highlight">Front/Back End Development</span>, I'm more eager than ever to push the limits on just what else these flourishing fields can accomplish with an agile team.`,
+		statement: `I have a yearning passion for learning new things and practicing what I already know. I also enjoy board games and watching science videos. After working with <span class="highlight">AI</span>, <span class="highlight">Machine Learning</span>, <span class="highlight">Kaizen (process improvement)</span>, as well as <span class="highlight">Front/Back End Development</span>, I'm more eager than ever to push the limits on just what else these flourishing fields can accomplish with an agile team.`,
 		name: "Nicholas Hazel",
 		year: 2019
 	},
