@@ -116,7 +116,7 @@ const STORE = {
 		title: "Web developer too stubborn to accept bad practices",
 		subtitle: "newTech && refactoring > oldHacks && spaghetti",
 		profileImg: ["./img/profile-pic-128.png", "./img/profile-pic-256.png"],
-		statement: `I have a yearning passion for learning new things and practicing what I already know. I also enjoy board games and watching science videos. After working with <span class="highlight">AI</span>, <span class="highlight">Machine Learning</span>, <span class="highlight">Kaizen (process improvement)</span>, as well as <span class="highlight">Front/Back End Development</span>, I'm more eager than ever to push the limits on just what else these flourishing fields can accomplish with an agile team.`,
+		statement: `I have a yearning passion for learning new things and practicing what I already know. After working with <span class="highlight">AI</span>, <span class="highlight">Machine Learning</span>, <span class="highlight">Kaizen (process improvement)</span>, as well as <span class="highlight">Front/Back End Development</span>, I'm more eager than ever to push the limits on just what else these flourishing fields can accomplish with an agile team.`,
 		name: "Nicholas Hazel",
 		year: 2019
 	},
@@ -183,9 +183,6 @@ function $createProjectDOM(projects){
 				<div class="project-wrapper">
 				<h3 class="project-title">${curProj.title}</h3>
           <p class="project-desc">${curProj.description}</p>
-          <p><strong>Purpose: </strong>${curProj.purpose}</p>
-          <p><strong>Who its for: </strong>${curProj.who}</p>
-          <p><strong>Why its built: </strong>${curProj.why}</p>
 					<h4 class="project-heading">Screenshots</h4>
 					<div class="project-thumbnails">
 						${$imgThumbs}
